@@ -1,0 +1,260 @@
+/* 放首页的样式表代码 */
+/* banner */
+.banner{
+    height: 500px;
+    background-color: #f5f5f5;;
+}
+.banner .wrapper{
+    position: relative;
+    height: 500px;
+    background-color: pink;
+}
+/* 侧导航 */
+.banner .aside{
+    /* 如果父级窗口没有定位，则以浏览器窗口为参照进行定位 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0,0,0,.8);
+}
+.banner .aside li{
+    height: 50px;
+    line-height: 50px;
+}
+.banner .aside a{
+    position: relative;
+    /* block会使宽度和父级一样，这样可以省去写宽度 */
+    display: block;
+    padding-left: 36px;
+    padding-right: 19px;
+    height: 50px;
+    /* background-color: pink; */
+    color: #fff;
+}
+
+.banner .aside a span{
+    margin-left: 15px;
+    font-size: 14px;
+}
+.banner .aside a:hover{
+    background-color: #27ba9b;
+}
+/* a的里面最后的位置放就箭头 */
+.banner .aside a::after{
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    content: '';
+    /* display: block; */
+    width: 16px;
+    height: 16px;
+    /* background-color: pink; */
+    background-image: url(../images/右箭头.png);
+}
+/* 并集，相同部分统一定义 */
+.prev,.next {
+    position: absolute;
+    top: 228px;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 50%;
+    /* 光标放在上面变成小手 */
+    cursor: pointer;
+}
+    
+/* 背景图位置负责两件事：改变箭头在盒子里面的位置；改变精灵图的位置 */
+/* 导致在精灵图中测量的尺寸不准确 */
+/* 解决方案有两种：
+1.书写背景图位置属性，借助谷歌的调试工具调试具体的位置数值
+2.书写标签的时候，a负责盒子，里面再添加一个span负责箭头 */
+
+.prev{
+    left: 260px;
+    background-image: url(../images/箭头左.png);
+    background-repeat: no-repeat;
+    background-position: 8px 8px;
+    
+}
+.next{
+    right: 10px;
+    background-image: url(../images/箭头右.png);
+    background-repeat: no-repeat;
+    background-position: 8px 8px;
+    /* background-size: contain; */
+}
+
+
+/* 圆点 */
+.banner ol{
+    position: absolute;
+    left: 680px;
+    bottom: 30px;
+    width: 200px;
+    height: 10px;
+    /* background-color: pink; */
+}
+
+.banner ol li{
+    
+    float: left;
+    margin-right: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255,255,.4);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.banner ol .current{
+    background-color: #fff;
+}
+
+/* 新鲜好物 */
+/* 头部hd */
+.goods .hd{
+    height: 114px;
+    /* background-color: pink; */
+    line-height: 114px;
+}
+
+.goods .hd h2{
+    float: left;
+    height: 114px;
+    font-size: 29px;
+    font-weight: 400;
+}
+.goods .hd h2 span{
+    margin-left: 34px ;
+    font-size: 16px;
+    color: #999;
+    
+}
+.goods .hd a{
+    float: right;
+    color: #999;
+}
+
+.goods .hd a span ,.shengxian .hd .more span{
+    margin-left: 13px;
+}
+/* 身体bd */
+
+.goods .bd li{
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    width: 304px;
+    height: 430px;
+    background-color: #f0f9f4;
+    text-align: center;
+}
+.goods .bd li:last-child{
+    margin-right: 0;
+}
+.goods .bd li img{
+    width: 304px;
+    height: 314px;
+    background-size: cover;
+}
+.goods .bd li h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400px;
+}
+.goods .bd li div{
+    color: #9a2e1f;
+    font-size: 17px;
+}
+.goods .bd li div span{
+    font-size: 23px;
+}
+.goods .bd li b{
+    position: absolute;
+    left: 17px;
+    top: 18px;
+    width: 28px;
+    height: 51px;
+    border: 1px solid #27ba9b;
+    border-radius: 2px;
+    font-size: 18px;
+    color: #27ba9b;
+    /* font-weight: 400; */
+    line-height: 24px;
+}
+.shengxian .hd{
+    height: 96px;
+    /* background-color: pink; */
+    line-height: 96px
+}
+.shengxian .hd h2{
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+}
+.shengxian .hd .more{
+    float: right;
+}
+
+.shengxian .hd ul{
+    float: right;
+    margin-right: 65px;
+}
+.shengxian .hd ul li{
+    float: left;
+    /* margin-right: 6px; */
+}
+.shengxian .hd li a{
+    padding: 2px 7px;
+    margin-left: 6px;
+}
+.shengxian .hd li a:hover{
+    background-color: #27ba9b;
+    color: #fff;
+}
+.shengxian .bd{
+    height: 610px;
+    /* background-color: pink; */
+}
+
+.shengxian .bd .left{
+    float: left;
+    width: 240px;
+    height: 610px;
+    /* background-color: skyblue; */
+}
+
+.shengxian .bd .right ul{
+    float: right;
+    width: 990px;
+    height: 610px;
+    /* background-color: skyblue; */
+}
+.shengxian .bd .right li{
+    float: left;
+
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 320px;
+    height: 300px;
+    /* background-color: green; */
+    /* text-align: center; */
+}
+.shengxian .bd .right li img{
+    width: 320px;
+    height: 240px;
+    background-size: cover;
+}
+.shengxian .bd .right li div{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    color: #999;
+    font-weight: 700;
+}
+.shengxian .bd .right li span{
+    color: pink;
+}
+
